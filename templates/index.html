@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Form</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <form action="/submit" method="post">
+        <label for="height">Height (in cm):</label><br>
+        <input type="text" id="height" name="height"><br>
+
+        <label for="weight">Weight (in kg):</label><br>
+        <input type="text" id="weight" name="weight"><br>
+
+        <p>Select Diseases:</p>
+        <input type="checkbox" id="diabetes" name="diseases" value="Diabetes">
+        <label for="diabetes"> Diabetes</label><br>
+        <input type="checkbox" id="bp" name="diseases" value="Blood Pressure">
+        <label for="bp"> Blood Pressure</label><br>
+        <input type="checkbox" id="cholesterol" name="diseases" value="Cholesterol">
+        <label for="cholesterol"> Cholesterol</label><br>
+
+        <h2>Nutritional Values</h2>
+        <label for="fat">Fat:</label><br>
+        <input type="text" id="fat" name="fat"><br>
+
+        <label for="fiber">Fiber:</label><br>
+        <input type="text" id="fiber" name="fiber"><br>
+
+        <label for="carbs">Carbohydrates:</label><br>
+        <input type="text" id="carbs" name="carbs"><br>
+
+        <label for="energy">Energy:</label><br>
+        <input type="text" id="energy" name="energy"><br>
+
+        <label for="proteins">Proteins:</label><br>
+        <input type="text" id="proteins" name="proteins"><br>
+
+        <label for="salts">Salts:</label><br>
+        <input type="text" id="salts" name="salts"><br>
+
+        <label for="sugars">Sugars:</label><br>
+        <input type="text" id="sugars" name="sugars"><br>
+
+        <!-- Submit Button -->
+        
+        <h2>Body Type</h2>
+        <input type="radio" id="skinny" name="body_type" value="skinny">
+        <label for="skinny"> Skinny</label><br>
+        <input type="radio" id="fit" name="body_type" value="fit">
+        <label for="fit"> Fit</label><br>
+        <input type="radio" id="obese" name="body_type" value="obese">
+        <label for="obese"> Obese</label><br>
+        <input type="submit" value="Submit">
+        
+    </form>
+    {% if safety_score is defined %}
+    <h2>Safety Score: {{ safety_score }}</h2>
+    {% endif %}
+    {% if new is defined %}
+    <h2>yes or no: {{ new }}</h2>
+    {% endif %}
+    
+</body>
+</html>
