@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .chart {
+      margin-bottom: 20px;
+    }
+    #userGreeting {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    #userGreeting img {
+      margin-right: 10px;
+      width: 60px; /* Adjust image size as needed */
+      height: 60px; /* Adjust image size as needed */
+      border-radius: 50%; /* Rounded image */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="userGreeting">
+      <img src="Unknown.jpg" alt="User Image"> <!-- Replace the image URL with your actual image -->
+      <h1>Hi, {user name}</h1>
+    </div>
+    <p>Here is your personalized profile.</p>
+    <div class="chart">
+      <h2>Safety Scores🌝
+      </h2>
+      <canvas id="overallRatingChart"></canvas>
+    </div>
+    <div class="chart">
+      <h2>Weekly Pie Chart (7 days)</h2>
+      <canvas id="weeklyPieChart" width="150" height="150"></canvas> <!-- Adjust width and height as needed -->
+      <p id="weeklyPieChartLabel"></p>
+    </div>
+    <div class="input-container">
+      <label for="ratingInput">Enter Rating:</label>
+      <input type="number" id="ratingInput" min="1" max="10">
+      <button onclick="addRating()">Add Rating</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Sample data for overall rating
+    const overallRatingData = {
+      labels: [],
+      datasets: [{
+        label: 'Overall Rating',
+        data: [],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // Sample data for weekly pie chart
+    const weeklyPieData = {
+      labels: ['Low', 'Medium', 'High'],
+      datasets: [{
+        label: 'Weekly Pie Chart',
+        data: [0, 0, 0],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // Get the chart canvas elements
+    const overallRatingCtx = document.getElementById('overallRatingChart').getContext('2d');
+    const weeklyPieCtx = document.getElementById('weeklyPieChart').getContext('2d');
+
+    // Create the overall rating bar chart
+    const overallRatingChart = new Chart(overallRatingCtx, {
+      type: 'bar',
+      data: overallRatingData
+    });
+
+    // Create the weekly pie chart
+    const weeklyPieChart = new Chart(weeklyPieCtx, {
+      type: 'pie',
+      data: weeklyPieData,
+      options: {
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+            }
+          }
+        }
+      }
+    });
+
+    // Function to add rating manually
+    function addRating() {
+      const ratingInput = document.getElementById('ratingInput');
+      const rating = parseInt(ratingInput.value);
+      if (isNaN(rating) || rating < 1 || rating > 10) {
+        alert('Please enter a valid rating between 1 and 10.');
+        return;
+      }
+      const productLabel = 'Product ' + (overallRatingChart.data.labels.length + 1);
+      overallRatingChart.data.labels.push(productLabel);
+      overallRatingChart.data.datasets[0].data.push(rating);
+      overallRatingChart.update();
+      updateWeeklyPieChart(rating);
+      ratingInput.value = '';
+    }
+
+    // Function to update weekly pie chart
+    function updateWeeklyPieChart(rating) {
+      if (rating <= 3) {
+        weeklyPieChart.data.datasets[0].data[0]++;
+      } else if (rating <= 7) {
+        weeklyPieChart.data.datasets[0].data[1]++;
+      } else {
+        weeklyPieChart.data.datasets[0].data[2]++;
+      }
+      weeklyPieChart.update();
+    }
+
+    // Set label for weekly pie chart
+    document.getElementById('weeklyPieChartLabel').innerText = 'Weekly Pie Chart (7 days)';
+  </script>
+</body>
+</html>

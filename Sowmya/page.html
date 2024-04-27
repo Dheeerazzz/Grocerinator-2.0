@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set, viewport, etc. -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
+    <title>Grocerinator</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="nutri.css">
+    <style>
+        html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    display:none;
+}
+
+section {
+    min-height: 100vh;
+}
+/* home page */
+.logo{
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
+.img1 {
+    position: absolute;
+    width: 264px;
+    height: 298px;
+    left: 700px;
+    top: 120px;
+}
+
+.name {
+    position: absolute;
+    width: 461px;
+    height: 131px;
+    left: 100px;
+    top: 11rem;
+}
+
+p {
+    height: 300px;
+    width: 600px;
+    left: 48px;
+    top: 4rem;
+    border-radius: nullpx;
+    font-size: 36px;
+}
+
+.nav {
+    position: absolute;
+    width: 703px;
+    height: 120px;
+    left: 670px;
+    top: 42px;
+}
+
+ul {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+    margin-right: 62px;
+    font-size: 24px;
+    padding: 0;
+    margin-right: 2.5rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* home pg end */
+/* about  */
+.about {
+    position: absolute;
+    width: 496px;
+    height: 122px;
+    left: 52px;
+    margin-top: 15px;
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 119px;
+}
+
+.matter {
+    position: absolute;
+    width: 1100px;
+    height: 600px;
+    left: 52px;
+    font-family: 'Roboto Slab';
+    font-weight: 350;
+    font-size: 23px;
+    line-height: 35px;
+    color: black;
+}
+@media(width < 600px){
+    .matter{
+        font-size: 23px;  
+        width: auto;
+        background-attachment: fixed;
+    }
+}
+
+span{
+    color: #299617;
+}
+/* about ending */
+/* services */
+.ser{
+    width: 496px;
+    height: 122px;
+    margin-left: 3rem;
+    margin-top: 5rem;
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 119px;
+
+}
+.box {
+    display: inline-block;
+    position: relative;
+    margin: 45px;
+    padding: 4px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    margin-top: 2rem;
+}
+.box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.box:hover img {
+    transform: scale(1.1);
+}
+
+.box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+}
+
+.box:hover .overlay {
+    opacity: 1;
+}
+
+.box .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px #000;
+}
+.box a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.leaf{
+    position: absolute;
+left: 1050.51px;
+top: 400px;
+mix-blend-mode: multiply;
+opacity: 0.5;
+transform: rotate(50.72deg);
+}
+.leaf1{
+    position: absolute;
+left: 1050.51px;
+top: 1000px;
+mix-blend-mode: multiply;
+opacity: 0.5;
+transform: rotate(50.72deg);
+}
+.dumbbel{
+    position: absolute;
+left: -62px;
+top: 440.11px;
+mix-blend-mode: multiply;
+opacity: 0.5;
+transform: rotate(24.32deg);
+} 
+.stem{
+    position: absolute;
+left: -90px;
+top: 850px;
+mix-blend-mode: multiply;
+opacity: 0.5;
+transform: rotate(-7.07deg);
+}
+/* contact us */
+.cont{
+    width: 496px;
+    height: 122px;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 119px;
+    padding: 0;
+}
+.bg{
+    background-image: url('https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg');
+    background-size: cover;
+    /* background-attachment: fixed; */
+    
+}
+
+.us{
+    float: left;
+    margin-left: 8rem;
+}
+.subdiv{
+    border-radius: 50px ;
+}
+input{
+    height: 33px;
+    width: 250px;
+}
+textarea{
+    height: 90px;
+    width: 252px;
+    resize: none;
+}
+button{
+    margin-top: 0.5rem;
+    height: 35px;
+    width: 70px;
+    background-color: aqua;
+    border: none;
+    border-radius: 10px;
+}
+.place{
+    margin-left: 4rem;
+    margin-top: 2rem;
+}
+footer{
+    margin-bottom: 2rem;
+    background-color: aquamarine;
+}
+
+        /* Section 3 styles */
+        /* CSS */
+/* Flip container styles */
+.flip-container {
+    perspective: 1000px;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+/* Styling for camera feed container */
+.camera-container {
+    width: 640px; /* Set width */
+    height: 480px; /* Set height */
+    border: 2px solid black; /* Add border */
+    margin: 0 auto; /* Center horizontally */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position relative for absolutely positioned children */
+}
+
+/* Styling for video element */
+#cameraFeed {
+    width: 100%; /* Make the video element fill the container */
+    height: 100%; /* Make the video element fill the container */
+    object-fit: cover; /* Cover the entire container */
+    position: absolute; /* Position absolutely within the container */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+
+
+.back {
+    transform: rotateY(180deg);
+}
+
+/* Styles for form elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 20px 160PX;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Center alignment for form and buttons */
+.text-center {
+    text-align: center;
+}
+
+/* Styling for card flip buttons */
+.card-flip-button {
+    margin-top: 20px;
+}
+
+/* Styling for camera feed */
+#cameraFeed {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+        /* CSS styling for the "Grocerinator" heading */
+        .name h1 {
+            font-size: 60px; /* Increase font size */
+            font-weight: bold; /* Make it bold */
+        }
+        .scroll-button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 30px 100px; /* Padding */
+            text-align: center; /* Center-align text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make it inline */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Cursor on hover */
+            border-radius: 12px; /* Rounded corners */
+            border: none; /* Remove border */
+            transition: background-color 0.3s; /* Smooth transition */
+            position: relative; /* Position relative */
+            top: -20px; /* Move it up */
+            left: 20px; /* Push it to the right */
+        }
+        
+        /* Change background color on hover */
+        .scroll-button:hover {
+            background-color: #45a049;
+            
+        }
+        .get-started-text {
+            font-size: 20px; /* Decrease font size */
+            font-weight: bold; /* Make it bold */
+            color: #555; /* Dark grey color */
+            margin-top: 10px; /* Add margin top */
+        }
+        section:first-child {
+            margin-top: 0px; /* Negative margin to move it up */
+        }
+        #form-section {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .container3 {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 320vh;
+    left:40px;
+    }
+        #section5 {
+    background-color: #ffffff; /* White background */
+    padding: 50px 0; /* Add padding */
+}
+/* Styling for the video camera feed */
+.camera-container {
+    width: 50%; /* Set width to 100% */
+    height: 50%; /* Allow height to adjust */
+    border: 2px solid black; /* Add border for visibility */
+    margin: 20px auto; /* Add margin for spacing */
+    position: relative; /* Position relative for absolutely positioned children */
+}
+
+#cameraFeed {
+    width: 100%; /* Make the video element fill the container */
+    height: 100%; /* Make the video element fill the container */
+    object-fit: cover; /* Cover the entire container */
+    position: absolute; /* Position absolutely within the container */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+.mb-4{
+    font-size: 50px;
+    align-items: center;
+}
+
+
+#section5 .card {
+    border-radius: 10px; /* Round corners */
+}
+
+#section5 .card-title {
+    color: black; /* Set title color */
+    font-family: blueberry; /* Use the blueberry font */
+}
+
+#section5 .form-control {
+    border-radius: 25px; /* Round input text boxes */
+    font-size: 18px; /* Increase font size */
+}
+
+#section5 .form-control:focus {
+    box-shadow: none; /* Remove focus box shadow */
+}
+
+#section5 .btn {
+    border-radius: 25px; /* Round buttons */
+    font-size: 18px; /* Increase button font size */
+}
+.section{
+    align-items: center;
+}
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+ction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+#section5 {
+    background-color: #ffffff; /* White background */
+    padding: 50px 0; /* Add padding */
+}
+
+#section5 .card {
+    border-radius: 10px; /* Round corners */
+}
+
+#section5 .card-title {
+    color: black; /* Set title color */
+    font-family: 'Roboto Slab'; /* Use the blueberry font */
+    font-size: 36px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+#section5 .form-control {
+    border-radius: 35px; /* Increase border radius for rounded input text boxes */
+    font-size: 24px; /* Increase font size */
+    padding: 15px 15px; /* Increase padding */
+}
+
+#section5 .btn {
+    border-radius: 20px; /* Increase border radius for rounded buttons */
+    font-size: 14px; /* Increase button font size */
+    padding: 30px 150px;
+    background-color:#4CAF50 /* Increase padding */
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation section -->
+    <section class="FirstPage">
+        </div> 
+        <!-- Logo section -->
+        <div class="logo" id="hom"></div>
+        <!-- Image section -->
+        <div class="img1">
+            <iframe id="myIframe" src="https://giphy.com/embed/tDbPlJFxQZeREMsdnO" width="475" height="468" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+            <p><a href="https://giphy.com/gifs/tDbPlJFxQZeREMsdnO"></a></p>
+        </div>
+        
+        <div class="name">
+            <!-- Heading for Grocerinator -->
+            <h1>Grocerinator</h1>
+            <!-- Some text about Grocerinator -->
+            <p>Grocerinator is your ultimate destination for nutrition information and remedies for nutrition deficiencies. We strive to empower you to make informed choices about your diet and lifestyle.</p>
+            <button style="z-index: 99;" id="submit" class="scroll-button" onclick="scrollToPage('section5')">Get Started</button>
+        </div>
+    </section>
+    <!-- Service section -->
+    <div id="section5" class="section">
+        <div class="container">
+        <div class="row justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <p class="ser" id="types">Fill <span> your </span>Details</p>
+            <form id="bodyTypeForm">
+              <div class="form-group">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control rounded-pill" id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="weight" class="form-label">Weight (kg):</label>
+                <input type="text" class="form-control rounded-pill" id="weight" placeholder="Enter your weight">
+              </div>
+              <div class="form-group">
+                <label for="height" class="form-label">Height (cm):</label>
+                <input type="text" class="form-control rounded-pill" id="height" placeholder="Enter your height">
+              </div>
+              <div class="form-group">
+                <label for="age" class="form-label">Age:</label>
+                <input type="text" class="form-control rounded-pill" id="age" placeholder="Enter your age">
+              </div>
+              <div class="form-group">
+                <label for="disease" class="form-label">Select any diseases you have:</label>
+                <select class="form-control rounded-pill" id="disease">
+                  <option value="">None</option>
+                  <option value="diabetes">Diabetes</option>
+                  <option value="hypertension">Hypertension</option>
+                  <option value="heart_disease">Heart Disease</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <br><br><button type="button" class="btn btn-primary btn-lg" onclick="selectBodyType()">SELECT YOUR BODY TYPE</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <section>
+        <p class="ser" id="types">BODY<span>TYPE</span></p>
+        <div class="services">
+            <!-- Boxes for different services -->
+            <div class="box">
+                <img src="images/5abc0c05087d49ffd86d65cb17e85071.jpg"
+                    alt="SKINNY">
+                <div class="overlay">
+                    <div class="overlay-text">SKINNY</div>
+
+                    <a href="nutrition deficiency1.html"></a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/b7d985393cd41af94bb033bf6f7a33bc.jpg"
+                    alt="FIT">
+                <div class="overlay">
+                    <div class="overlay-text">FIT</div>
+
+                    <a href="nutrition1.html"></a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/Premium Vector | Happy fat man running on white background vector illustration.jpg"
+                    alt="OBESE">
+                <div class="overlay">
+                    <div class="overlay-text">OBESE</div>
+
+                    <!-- <a href="fitness1.html"></a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Images -->
+    <div class="leaf">
+        <img src="https://img.freepik.com/premium-vector/lettuce-leaf-sketching-graphics-engraving_89016-113.jpg?w=2000"
+            width="300" height="300">
+    </div>
+    <div class="leaf1">
+        <img src="https://img.freepik.com/premium-vector/lettuce-leaf-sketching-graphics-engraving_89016-113.jpg?w=2000"
+            width="300" height="300">
+    </div>
+    <div class="dumbbel">
+        <img src="https://static.vecteezy.com/system/resources/previews/016/776/883/original/dumbbells-sketch-vector.jpg"
+            width="300" height="280">
+    </div>
+    <div class="stem">
+        <img src="https://static.vecteezy.com/system/resources/previews/007/658/395/non_2x/leaf-branch-sketch-vector.jpg"
+            width="300" height="280">
+    </div>
+       <!-- Body Type section -->
+<section>
+    <!-- Content for the body type section -->
+</section>
+
+<!-- Body Type section -->
+<section id="bodyTypeSection">
+    <style>
+        .camera-container {
+    width: 100%; /* Set width to 100% */
+    height: 100%; /* Set height to 100% */
+    border: 2px solid black; /* Add border for visibility */
+    margin: 20px auto; /* Add margin for spacing */
+    position: relative; /* Position relative for absolutely positioned children */
+}
+/* Styling for video camera feed */
+#cameraFeed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the camera feed appears above other elements */
+}
+
+/* Adjust the back face of the card to ensure visibility */
+.back {
+    transform: rotateY(180deg);
+    z-index: 2; /* Set a higher z-index to make sure it appears above the front face */
+}
+
+
+    </style>
+    <div id="section3" class="section">
+        <div class="container3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="flip-container">
+                        <div class="flipper" id="flipper">
+                            <!-- Front side of the card -->
+                            <div class="card front">
+                                <div class="card-body">
+                                    <form id="myForm" return false;">
+                                        <p class="ser" id="types">Enter <span>NUTRIENT </span>Values</p>
+                                        <div class="row">
+                                            <!-- Left side columns -->
+                                            <div class="col-md-6">
+                                                <!-- Nutrient 1 -->
+                                                <div class="form-group">
+                                                    <label for="Fats">Fats</label>
+                                                    <input type="text" class="form-control" id="nutrient1" placeholder="Enter fat values">
+                                                </div>
+                                                <!-- Saturated fats -->
+                                                <div class="form-group">
+                                                    <label for="Saturated fats">Saturated fats:</label>
+                                                    <input type="text" class="form-control" id="nutrient2" placeholder="Enter Saturated fats">
+                                                </div>
+                                                <!-- Carbohydrates -->
+                                                <div class="form-group">
+                                                    <label for="Carbohydrates">Carbohydrates:</label>
+                                                    <input type="text" class="form-control" id="Carbohydrates" placeholder="Enter Carbohydrates">
+                                                </div>
+                                                <!-- Energy -->
+                                                <div class="form-group">
+                                                    <label for="Energy">Energy:</label>
+                                                    <input type="text" class="form-control" id="Energy" placeholder="Enter Energy">
+                                                </div>
+                                            </div>
+                                            <!-- Right side columns -->
+                                            <div class="col-md-6">
+                                                <!-- Sugar -->
+                                                <div class="form-group">
+                                                    <label for="Sugar">Sugar:</label>
+                                                    <input type="text" class="form-control" id="Sugar" placeholder="Enter Sugar">
+                                                </div>
+                                                <!-- Fiber -->
+                                                <div class="form-group">
+                                                    <label for="Fiber">Fiber:</label>
+                                                    <input type="text" class="form-control" id="Fiber" placeholder="Enter Fiber">
+                                                </div>
+                                                <!-- Protein -->
+                                                <div class="form-group">
+                                                    <label for="Protein">Protein:</label>
+                                                    <input type="text" class="form-control" id="Protein" placeholder="Enter Protein">
+                                                </div>
+                                                <!-- Salt -->
+                                                <div class="form-group">
+                                                    <label for="Salt">Salt:</label>
+                                                    <input type="text" class="form-control" id="Salt" placeholder="Enter Salt">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Centered button for form submission -->
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary" onclick="flipCard()">Flip to Scan</button>
+                                            
+                                            <button type="submit" style="z-index:99;" class="btn btn-success" onclick="scrollToPage('section4')">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+               
+<div class="card back">
+<div class="card-body">
+    <center>
+        <h5 class="card-title">Scan Results</h5>
+        <!-- Video element for displaying the camera feed -->
+        <video id="cameraFeed" width="640" height="480" autoplay></video><br>
+        <!-- Modified button to capture image and send to Flask -->
+        <button type="button" class="btn btn-secondary" onclick="captureAndProcessImage()">Scan and Process</button>
+        <button type="button" class="btn btn-primary" onclick="unflipCard()">Go Back</button>
+        <div id="ocrResult"></div>
+    </center>
+</div>
+</div>
+
+
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+        <div id="ocrResult" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+
+    </div> 
+   
+    <div class="section" id="section4">
+        Your Predicted score is
+        <div id="randomNumberContainer" onmouseenter="generateRandomNumber()"></div>
+    </div>
+    <script>
+        function flipCard() {
+            // Start the camera when the card flips
+            startCamera();
+            // Add the 'flipped' class to flip the card
+            document.getElementById('flipper').classList.add('flipped');
+        }
+    
+        function unflipCard() {
+            // Remove the 'flipped' class to unflip the card
+            document.getElementById('flipper').classList.remove('flipped');
+        }
+    
+        function startCamera() {
+            // Get the video element
+            const video = document.getElementById('cameraFeed');
+    
+            // Request access to the camera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    video.srcObject = stream;
+                })
+                .catch((error) => {
+                    console.error('Error accessing camera:', error);
+                });
+        }
+    </script>
+    
+    <script>//OCR Version
+        // Get the video element
+
+
+        // Request access to the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((error) => {
+                console.error('Error accessing camera:', error);
+            });
+
+            function performOCR() {
+
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
+canvas.width = video.videoWidth;
+canvas.height = video.videoHeight;
+context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+// Convert canvas to base64 image
+const dataUrl = canvas.toDataURL('image/jpeg');
+const base64Image = dataUrl.split(',')[1];
+
+// Send the image to the Flask backend
+fetch('/process_image', {
+    method: 'POST',
+    body: JSON.stringify({ image: base64Image }),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(result => {
+    // Handle response from Flask if needed
+    console.log(result);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+}
+
+    </script>
+<script>
+function processImage(image) {
+    Tesseract.recognize(
+        image,
+        'eng', // Language code (English in this case)
+        {
+            logger: info => console.log(info)
+        }
+    ).then(({ data: { text } }) => {
+        // Update the content of the ocrResult div with the OCR result
+        document.getElementById('ocrResult').textContent = text;
+    });
+}
+</script>
+
+    <script>//flip card
+        function flipCard() {
+            document.getElementById('flipper').classList.add('flipped');
+        }
+
+        function unflipCard() {
+            document.getElementById('flipper').classList.remove('flipped');
+        }
+    </script>
+
+    <script>//Scroll of page
+    function scrollToPage(sectionId) {
+        const sections = document.getElementById(sectionId);
+
+        if (sections) {
+            sections.style.display = 'flex';
+            window.scrollTo({
+                top: sections.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+    </script>
+
+<script>
+function captureAndProcessImage() {
+    // Create a canvas to draw the current frame
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    const video = document.getElementById('cameraFeed');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    // Convert canvas to base64 image
+    const dataUrl = canvas.toDataURL('image/jpeg');
+    const base64Image = dataUrl.split(',')[1];
+
+    // Send the image to Flask for processing
+    fetch('/process_image', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ image: base64Image }),
+    })
+    .then(response => response.json())
+    .then(result => {
+        // Display the processing result
+        document.getElementById('ocrResult').textContent = result.result;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+</script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Get the video element
+    let video = document.getElementById('cameraFeed');
+
+    // Request access to the camera
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then((stream) => {
+            video.srcObject = stream;
+        })
+        .catch((error) => {
+            console.error('Error accessing camera:', error);
+        });
+
+    function performOCR() {
+        // Create a canvas to draw the current frame
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // Convert canvas to base64 image
+        const dataUrl = canvas.toDataURL('image/jpeg');
+        const base64Image = dataUrl.split(',')[1];
+
+        // Send the image to the server for OCR processing
+        fetch('/process_ocr', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ image: base64Image }),
+        })
+        .then(response => response.json())
+        .then(result => {
+            // Display the OCR result
+            document.getElementById('ocrResult').textContent = result.result;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+<script>
+    function scrollToPage(sectionId) {
+        const nextPage = document.getElementById(sectionId);
+
+        if (nextPage) {
+            nextPage.style.display = 'flex';
+            window.scrollTo({
+                top: nextPage.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+</script>
+<script>
+const cart = document.getElementById('cart');
+
+// Event listener to check when the animation completes
+cart.addEventListener('animationiteration', checkCartPosition);
+
+function checkCartPosition() {
+    // Get the position of the cart
+    const cartRect = cart.getBoundingClientRect();
+
+    // Check if the cart is near the right edge of the viewport
+    if (cartRect.right >= window.innerWidth) {
+        // Perform the page transition logic here
+        // For now, let's simply redirect to the next page
+        window.location.href = 'nextPage.html';
+    }
+}
+</script>
+<script>
+    function flipCard() {
+        document.getElementById('flipper').classList.add('flipped');
+    }
+
+    function unflipCard() {
+        document.getElementById('flipper').classList.remove('flipped');
+    }
+</script>
+</script>
+<script>
+
+</script>
+<script>document.getElementById('imageInput').addEventListener('change', handleImage);
+
+    function handleImage() {
+        const input = document.getElementById('imageInput');
+        const file = input.files[0];
+    
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const image = new Image();
+                image.src = e.target.result;
+                image.onload = function () {
+                    processImage(image);
+                };
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    
+    function processImage(image) {
+        Tesseract.recognize(
+            image,
+            'eng', // Language code (English in this case)
+            {
+                logger: info => console.log(info)
+            }
+        ).then(({ data: { text } }) => {
+            document.getElementById('result').textContent = text;
+        });
+    }
+    </script>
+<script>
+    function flipCard() {
+        document.getElementById('flipper').classList.add('flipped');
+    }
+
+    function unflipCard() {
+        document.getElementById('flipper').classList.remove('flipped');
+    }
+   
+
+</script>
+
+<script>
+    function generateRandomNumber() {
+      // Generate a random number between 1 and 10 (including decimals)
+      const randomNumber = (Math.random() * 9) + 1;
+  
+      // Update the content of the div with the generated random number
+      document.getElementById('randomNumberContainer').innerHTML = `${randomNumber.toFixed(1)}`;
+    }
+  </script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html
