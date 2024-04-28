@@ -4,15 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Details Form</title>
+    <style>
+    .logo{
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
+.img1 {
+    position: absolute;
+    width: 264px;
+    height: 298px;
+    left: 700px;
+    top: 120px;
+}
+.name {
+    position: absolute;
+    width: 461px;
+    height: 131px;
+    left: 100px;
+    top: 11rem;
+}
+    </style>
 </head>
 <body>
-    <h1>User Details</h1>
-    <form action="/submit" method="post">
-        <label for="height">Height (in cm):</label><br>
-        <input type="text" id="height" name="height"><br>
+    <section class="FirstPage">
+    </div> 
+    <!-- Logo section -->
+    <div class="logo" id="hom"></div>
+    <!-- Image section -->
+    <div class="img1">
+        <iframe id="myIframe" src="https://giphy.com/embed/tDbPlJFxQZeREMsdnO" width="475" height="468" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+        <p><a href="https://giphy.com/gifs/tDbPlJFxQZeREMsdnO"></a></p>
+    </div>
+    
+    <div class="name">
+        <!-- Heading for Grocerinator -->
+        <h1>Grocerinator</h1>
+        <!-- Some text about Grocerinator -->
+        <p>Grocerinator is your ultimate destination for nutrition information and remedies for nutrition deficiencies. We strive to empower you to make informed choices about your diet and lifestyle.</p>
+        <button style="z-index: 99;" id="submit" class="scroll-button" onclick="scrollToPage('section5')">Get Started</button>
+    </div>
+</section>
 
-        <label for="weight">Weight (in kg):</label><br>
-        <input type="text" id="weight" name="weight"><br>
+<center>
+<section style="margin-top: 700px;">
+    <section class="part1" style="padding-bottom: 400px;">
+    <h1 style="margin-top: 100px;">User Details</h1>
+    <form action="/submit" method="post">
+        <label for="height">Height (in cm):</label>
+        <input type="text" class="form-control rounded-pill" id="height" name="height"><br>
+
+        <label for="weight">Weight (in kg):</label>
+        <input type="text" class="form-control rounded-pill" id="weight" name="weight"><br>
 
         <p>Select Diseases:</p>
         <input type="checkbox" id="diabetes" name="diseases" value="Diabetes">
@@ -21,7 +64,7 @@
         <label for="bp"> Blood Pressure</label><br>
         <input type="checkbox" id="cholesterol" name="diseases" value="Cholesterol">
         <label for="cholesterol"> Cholesterol</label><br>
-
+    </section>
         <h2>Nutritional Values</h2>
         <label for="fat">Fat:</label><br>
         <input type="text" id="fat" name="fat"><br>
@@ -45,7 +88,7 @@
         <input type="text" id="sugars" name="sugars"><br>
 
         <!-- Submit Button -->
-        
+        <section style="padding-top: 300px;padding-bottom: 300px;">
         <h2>Body Type</h2>
         <input type="radio" id="skinny" name="body_type" value="skinny">
         <label for="skinny"> Skinny</label><br>
@@ -54,14 +97,17 @@
         <input type="radio" id="obese" name="body_type" value="obese">
         <label for="obese"> Obese</label><br>
         <input type="submit" value="Submit">
-        
+    </section>
     </form>
+</section>
+</center>
+<center>
     {% if safety_score is defined %}
-    <h2>Safety Score: {{ safety_score }}</h2>
+    <h2> {{ safety_score[0] }}</h2>
     {% endif %}
     {% if new is defined %}
-    <h2>yes or no: {{ new }}</h2>
+    <h2>{{ new }}</h2>
     {% endif %}
-    
+</center>
 </body>
 </html>
