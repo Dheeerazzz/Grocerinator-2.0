@@ -24,7 +24,158 @@
     left: 100px;
     top: 11rem;
 }
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo style */
+.logo {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
+
+/* Image style */
+.img1 {
+    position: absolute;
+    width: 264px;
+    height: 298px;
+    left: 700px;
+    top: 120px;
+}
+
+/* Name section style */
+.name {
+    position: absolute;
+    width: 461px;
+    height: auto;
+    left: 100px;
+    top: 200px; /* Adjusted for better alignment */
+}
+
+/* Heading style */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Paragraph style */
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Button style */
+.scroll-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: #0056b3;
+}
+
+/* Form section style */
+.part1 {
+    margin-top: 100px; /* Adjusted for better alignment */
+}
+
+/* Label style */
+label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Input style */
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button style */
+input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Center align text */
+center {
+    text-align: center;
+}
+
+/* Error message style */
+.error {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+/* Body Type section style */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+
+
+label {
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+
+/* Container for nutritional values */
+.nutritional-values-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    gap: 10px; /* Adjust the gap between items */
+}
+
+/* Label style */
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left; /* Align the labels to the right */
+    width: 200px; /* Set a fixed width for consistent alignment */
+    margin-left: 200px;
+}
+
+
+/* Input style */
+input[type="text"] {
+    width: 80%;
+    box-sizing: border-box;
+    margin-left: -300px;
+}
+
+
+
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <section class="FirstPage">
@@ -33,16 +184,16 @@
     <div class="logo" id="hom"></div>
     <!-- Image section -->
     <div class="img1">
-        <iframe id="myIframe" src="https://giphy.com/embed/tDbPlJFxQZeREMsdnO" width="475" height="468" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+        <iframe id="myIframe" src="https://giphy.com/embed/tDbPlJFxQZeREMsdnO" width="475" height="468" frameborder="0" class="giphy-embed" allowfullscreen style="margin-left: 300px;"></iframe>
         <p><a href="https://giphy.com/gifs/tDbPlJFxQZeREMsdnO"></a></p>
     </div>
     
     <div class="name">
         <!-- Heading for Grocerinator -->
-        <h1>Grocerinator</h1>
+        <h1 style="font-size: 60px;">Grocerinator.</h1>
         <!-- Some text about Grocerinator -->
         <p>Grocerinator is your ultimate destination for nutrition information and remedies for nutrition deficiencies. We strive to empower you to make informed choices about your diet and lifestyle.</p>
-        <button style="z-index: 99;" id="submit" class="scroll-button" onclick="scrollToPage('section5')">Get Started</button>
+        <butt
     </div>
 </section>
 
@@ -51,57 +202,73 @@
     <section class="part1" style="padding-bottom: 400px;">
     <h1 style="margin-top: 100px;">User Details</h1>
     <form action="/submit" method="post">
-        <label for="height">Height (in cm):</label>
-        <input type="text" class="form-control rounded-pill" id="height" name="height"><br>
+        <Section style="padding-left: 250px;">
+        <label for="height" style="margin-left: 30px;">Height (in cm):</label>
+        <input type="text" class="form-control rounded-pill" id="height" name="height" style="border-radius: 10px;"><br>
 
-        <label for="weight">Weight (in kg):</label>
-        <input type="text" class="form-control rounded-pill" id="weight" name="weight"><br>
+        <label for="weight" style="margin-left: 30px;">Weight (in kg):</label>
+        <input type="text" class="form-control rounded-pill" id="weight" name="weight" style="border-radius: 10px;"><br>
+    </Section>
+    <section style="margin-left: 300px;">
+        <p style="margin-right: 750px;">Diseases:</p>
+<div class="diseases-container">
+    <input type="checkbox" id="diabetes" name="diseases" value="Diabetes">
+    <label for="diabetes">Diabetes</label>
 
-        <p>Select Diseases:</p>
-        <input type="checkbox" id="diabetes" name="diseases" value="Diabetes">
-        <label for="diabetes"> Diabetes</label><br>
-        <input type="checkbox" id="bp" name="diseases" value="Blood Pressure">
-        <label for="bp"> Blood Pressure</label><br>
-        <input type="checkbox" id="cholesterol" name="diseases" value="Cholesterol">
-        <label for="cholesterol"> Cholesterol</label><br>
+    <input type="checkbox" id="bp" name="diseases" value="Blood Pressure">
+    <label for="bp">Blood Pressure</label>
+
+    <input type="checkbox" id="cholesterol" name="diseases" value="Cholesterol">
+    <label for="cholesterol">Cholesterol</label>
+</div>
+</section>
     </section>
-        <h2>Nutritional Values</h2>
-        <label for="fat">Fat:</label><br>
-        <input type="text" id="fat" name="fat"><br>
-
-        <label for="fiber">Fiber:</label><br>
-        <input type="text" id="fiber" name="fiber"><br>
-
-        <label for="carbs">Carbohydrates:</label><br>
-        <input type="text" id="carbs" name="carbs"><br>
-
-        <label for="energy">Energy:</label><br>
-        <input type="text" id="energy" name="energy"><br>
-
-        <label for="proteins">Proteins:</label><br>
-        <input type="text" id="proteins" name="proteins"><br>
-
-        <label for="salts">Salts:</label><br>
-        <input type="text" id="salts" name="salts"><br>
-
-        <label for="sugars">Sugars:</label><br>
-        <input type="text" id="sugars" name="sugars"><br>
-
+    <h2 style="padding-bottom: 50px;font-size: 30px;">Nutritional Values</h2>
+    <div class="nutritional-values-container">
+        <label for="fat">Fat:</label>
+        <input type="text" id="fat" name="fat">
+    
+        <label for="fiber">Fiber:</label>
+        <input type="text" id="fiber" name="fiber">
+    
+        <label for="carbs">Carbohydrates:</label>
+        <input type="text" id="carbs" name="carbs">
+    
+        <label for="energy">Energy:</label>
+        <input type="text" id="energy" name="energy">
+    
+        <label for="proteins">Proteins:</label>
+        <input type="text" id="proteins" name="proteins">
+    
+        <label for="salts">Salts:</label>
+        <input type="text" id="salts" name="salts">
+    
+        <label for="sugars">Sugars:</label>
+        <input type="text" id="sugars" name="sugars">
+    </div>
+    
         <!-- Submit Button -->
-        <section style="padding-top: 300px;padding-bottom: 300px;">
-        <h2>Body Type</h2>
-        <input type="radio" id="skinny" name="body_type" value="skinny">
-        <label for="skinny"> Skinny</label><br>
-        <input type="radio" id="fit" name="body_type" value="fit">
-        <label for="fit"> Fit</label><br>
-        <input type="radio" id="obese" name="body_type" value="obese">
-        <label for="obese"> Obese</label><br>
-        <input type="submit" value="Submit">
+    <section style="margin-top: 300px;padding-bottom: 400px;">
+        <h2 style="font-size: 40px;padding-bottom: 100px;">Body Type</h2>
+<div class="body-type-container" style="margin-left: 350px;" >
+    <input type="radio" id="skinny" name="body_type" value="skinny" style="padding: 20px;">
+    <label for="skinny">Skinny</label>
+
+    <input type="radio" id="fit" name="body_type" value="fit" style="padding: 20px;">
+    <label for="fit">Fit</label>
+
+    <input type="radio" id="obese" name="body_type" value="obese" style="padding: 20px;">
+    <label for="obese">Obese</label>
+</div>
+</section>
     </section>
+    <section style="margin-top: -200px;">
+    <input type="submit" name="/submit">
+</section>
     </form>
 </section>
 </center>
-<center>
+<center style="margin-top: 320px;padding-bottom: 320px;">
     {% if safety_score is defined %}
     <h2> {{ safety_score[0] }}</h2>
     {% endif %}
@@ -109,5 +276,6 @@
     <h2>{{ new }}</h2>
     {% endif %}
 </center>
+
 </body>
 </html>
