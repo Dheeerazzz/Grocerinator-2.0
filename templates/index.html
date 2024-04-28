@@ -173,6 +173,23 @@ input[type="text"] {
 }
 
 
+.body-type-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio-container {
+    text-align: center;
+}
+
+.body-type-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
 
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -253,20 +270,36 @@ input[type="text"] {
         <input type="text" id="sugars" name="sugars">
     </div>
     
-        <!-- Submit Button -->
-    <section style="margin-top: 300px;padding-bottom: 400px;">
-        <h2 style="font-size: 40px;padding-bottom: 100px;">Body Type</h2>
-<div class="body-type-container" style="margin-left: 350px;" >
-    <input type="radio" id="skinny" name="body_type" value="skinny" style="padding: 20px;">
-    <label for="skinny">Skinny</label>
-
-    <input type="radio" id="fit" name="body_type" value="fit" style="padding: 20px;">
-    <label for="fit">Fit</label>
-
-    <input type="radio" id="obese" name="body_type" value="obese" style="padding: 20px;">
-    <label for="obese">Obese</label>
-</div>
-</section>
+    <section style="margin-top: 300px; padding-bottom: 400px;">
+        <h2 style="font-size: 40px; padding-bottom: 100px;">Body Type</h2>
+        <div class="body-type-container" ">
+            <div class="radio-container">
+                <input type="radio" id="skinny" name="body_type" value="skinny">
+                <label for="skinny">
+                    <img src="skinny.jpg" alt="Skinny" class="body-type-img"><br>
+                    <span>Skinny</span>
+                </label>
+            </div>
+    
+            <div class="radio-container">
+                <input type="radio" id="fit" name="body_type" value="fit">
+                <label for="fit">
+                    <img src="fit.jpg" alt="Fit" class="body-type-img"><br>
+                    <span>Fit</span>
+                </label>
+            </div>
+    
+            <div class="radio-container">
+                <input type="radio" id="obese" name="body_type" value="obese">
+                <label for="obese">
+                    <img src="obese.jpg" alt="Obese" class="body-type-img"><br>
+                    <span>Obese</span>
+                </label>
+            </div>
+        </div>
+    </section>
+    
+        
     </section>
     <section style="margin-top: -200px;">
     <input type="submit" name="/submit">
@@ -276,12 +309,19 @@ input[type="text"] {
 </center>
 {{ scroll_script | safe }}
 <center style="margin-top: 320px;padding-bottom: 320px;">
+    
     {% if safety_score is defined %}
-    <h2> {{ safety_score[0] }}</h2>
-    {% endif %}
-    {% if new is defined %}
-    <h2>{{ new }}</h2>
-    {% endif %}
+    <h2><span style="font-weight: lighter;">The predicted safety score for the product is :</span> {{ safety_score[0] }}</h2>
+{% endif %}
+{% if new is defined %}
+    <h2>
+        {% for value in new %}
+            {{ value }} <br>
+        {% endfor %}
+    </h2>
+{% endif %}
+
+
 </center>
 <script>
 function scrollPage() {

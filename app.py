@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 import joblib
 import os
+import numpy as np
 
 app = Flask(__name__)
 
@@ -48,20 +49,30 @@ def submit():
     yes_or_no = yesorno_model.predict([nutritional_values])
 
     if body_type == 'skinny':
-        new.append(round(yes_or_no[0][3]))
+        if (round(yes_or_no[0][3])) ==0:
+            new.append('This product is not suitable for your bodytype (Skinny)')
+        
     elif body_type == 'fit':
-        new.append(round(yes_or_no[0][4]))
+        if (round(yes_or_no[0][4])) ==0:
+            new.append('This product is not recommended for your bodytype.')
+        
     elif body_type == 'obese':
-        new.append(round(yes_or_no[0][5]))
+        if (round(yes_or_no[0][5])) ==0:
+            new.append('This product is not suitable for your bodytype (Obese)')
+        
 
     if 'Diabetes' in diseases:
-        new.append(round(yes_or_no[0][0]))
+        if (round(yes_or_no[0][0])) ==0:
+            new.append('ALERT : This product is not recommended because of high added sugar amount')
+        
     if 'Blood Pressure' in diseases:
-        new.append(round(yes_or_no[0][1]))
+        if (round(yes_or_no[0][1])) ==0:
+            new.append('ALERT : This product is not recommended because of high salt amount')
     if 'Cholesterol' in diseases:
-        new.append(round(yes_or_no[0][2]))
+        if (round(yes_or_no[0][0])) ==0:
+            new.append('ALERT : This product is not recommended because of high amounts of fat')
 
-    return render_template('index.html', safety_score=safety_score, new=new)
+    return render_template('index.html', safety_score=np.round(safety_score, decimals=1), new=new)
 
 @app.route('/data')
 def get_data():
