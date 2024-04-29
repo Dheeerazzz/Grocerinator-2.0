@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Details Form</title>
+    <title>Grocerinator</title>
     <style>
     .logo{
     position: absolute;
@@ -147,6 +147,8 @@ label {
 }
 
 
+
+
 /* Container for nutritional values */
 .nutritional-values-container {
     display: grid;
@@ -188,6 +190,41 @@ input[type="text"] {
     object-fit: cover;
     border-radius: 50%;
 }
+.card-container {
+    perspective: 1000px; /* Create 3D effect */
+}
+
+.card {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back side */
+}
+
+.back {
+    background-color: #f0f0f0; /* Add background color to back side */
+    transform: rotateY(180deg); /* Initially flip to the back side */
+}
+
+.flip-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+}
+
+.card.flipped {
+    transform: rotateY(180deg); /* Flip the card when .flipped class is added */
+}
 
 
 
@@ -200,6 +237,7 @@ input[type="text"] {
     <!-- Logo section -->
     <div class="logo" id="hom"></div>
     <!-- Image section -->
+    <span><a href='static/Dashbord.html'>View Profile</a></span>
     <div class="img1">
         <iframe id="myIframe" src="https://giphy.com/embed/tDbPlJFxQZeREMsdnO" width="475" height="468" frameborder="0" class="giphy-embed" allowfullscreen style="margin-left: 300px;"></iframe>
         <p><a href="https://giphy.com/gifs/tDbPlJFxQZeREMsdnO"></a></p>
@@ -231,7 +269,7 @@ input[type="text"] {
         <p style="margin-right: 750px;">Diseases:</p>
 <div class="diseases-container">
     <input type="checkbox" id="diabetes" name="diseases" value="Diabetes">
-    <label for="diabetes">Diabetes</label>
+    <label for="diabetes">Type-2 Diabetes</label>
 
     <input type="checkbox" id="bp" name="diseases" value="Blood Pressure">
     <label for="bp">Blood Pressure</label>
@@ -245,38 +283,57 @@ input[type="text"] {
 
     </section>
     
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <h2 style="padding-bottom: 50px; font-size: 30px;">Nutritional Values</h2>
+                <div class="nutritional-values-container">
+                    <label for="fat">Fat:</label>
+                    <input type="text" id="fat" name="fat">
+    
+                    <label for="fiber">Fiber:</label>
+                    <input type="text" id="fiber" name="fiber">
+    
+                    <label for="carbs">Carbohydrates:</label>
+                    <input type="text" id="carbs" name="carbs">
+    
+                    <label for="energy">Energy:</label>
+                    <input type="text" id="energy" name="energy">
+    
+                    <label for="proteins">Proteins:</label>
+                    <input type="text" id="proteins" name="proteins">
+    
+                    <label for="salts">Salts:</label>
+                    <input type="text" id="salts" name="salts">
+    
+                    <label for="sugars">Sugars:</label>
+                    <input type="text" id="sugars" name="sugars">
+                </div>
+                
 
-    <h2 style="padding-bottom: 50px;font-size: 30px;">Nutritional Values</h2>
-    <div class="nutritional-values-container">
-        <label for="fat">Fat:</label>
-        <input type="text" id="fat" name="fat">
-    
-        <label for="fiber">Fiber:</label>
-        <input type="text" id="fiber" name="fiber">
-    
-        <label for="carbs">Carbohydrates:</label>
-        <input type="text" id="carbs" name="carbs">
-    
-        <label for="energy">Energy:</label>
-        <input type="text" id="energy" name="energy">
-    
-        <label for="proteins">Proteins:</label>
-        <input type="text" id="proteins" name="proteins">
-    
-        <label for="salts">Salts:</label>
-        <input type="text" id="salts" name="salts">
-    
-        <label for="sugars">Sugars:</label>
-        <input type="text" id="sugars" name="sugars">
+            </div>
+            <div class="back">
+                
+                    <div id="webcam-feed"></div>
+                    <button id="capture-button">Capture</button>
+                </div>
+                
+           
+            <button class="flip-button" class="scroll-button" onclick="flipCard(event)">Flip</button>
+        </div>
+        {% if ocr_result %}
+    <h2>OCR Result: {{ ocr_result }}</h2>
+{% endif %}
     </div>
+    
     
     <section style="margin-top: 300px; padding-bottom: 400px;">
         <h2 style="font-size: 40px; padding-bottom: 100px;">Body Type</h2>
-        <div class="body-type-container" ">
+        <div class="body-type-container">
             <div class="radio-container">
                 <input type="radio" id="skinny" name="body_type" value="skinny">
                 <label for="skinny">
-                    <img src="skinny.jpg" alt="Skinny" class="body-type-img"><br>
+                    <img src="{{ url_for('static', filename='images/slim.jpg') }}"" alt="Skinny" class="body-type-img"><br>
                     <span>Skinny</span>
                 </label>
             </div>
@@ -284,7 +341,7 @@ input[type="text"] {
             <div class="radio-container">
                 <input type="radio" id="fit" name="body_type" value="fit">
                 <label for="fit">
-                    <img src="fit.jpg" alt="Fit" class="body-type-img"><br>
+                    <img src="{{ url_for('static', filename='images/fit.jpg') }}" alt="Fit" class="body-type-img"><br>
                     <span>Fit</span>
                 </label>
             </div>
@@ -292,7 +349,7 @@ input[type="text"] {
             <div class="radio-container">
                 <input type="radio" id="obese" name="body_type" value="obese">
                 <label for="obese">
-                    <img src="obese.jpg" alt="Obese" class="body-type-img"><br>
+                    <img src="{{ url_for('static', filename='images/fat.jpg') }}" alt="Fat Image" class="body-type-img"><br>
                     <span>Obese</span>
                 </label>
             </div>
@@ -338,6 +395,100 @@ function scrollPage() {
                 behavior: 'smooth'
             });
         }
+    </script>
+    <script>
+    function flipCard(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    var card = document.querySelector('.card');
+    card.classList.toggle('flipped');
+}
+
+
+    </script>
+    <script>
+            // Get the webcam-feed and capture-button elements
+const webcamFeed = document.getElementById('webcam-feed');
+const captureButton = document.getElementById('capture-button');
+let stream = null; // Variable to store the video stream
+
+// Function to start the webcam and display the feed
+async function startWebcam() {
+    try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        webcamFeed.innerHTML = `<video id="video-element" autoplay></video>`;
+        const videoElement = document.getElementById('video-element');
+        videoElement.srcObject = stream;
+
+        // Resize video to match card dimensions
+        const card = document.querySelector('.card');
+        videoElement.addEventListener('loadedmetadata', () => {
+            const cardWidth = card.clientWidth;
+            const cardHeight = card.clientHeight;
+            const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
+
+            if (cardWidth / aspectRatio < cardHeight) {
+                videoElement.width = cardWidth;
+                videoElement.height = cardWidth / aspectRatio;
+            } else {
+                videoElement.height = cardHeight;
+                videoElement.width = cardHeight * aspectRatio;
+            }
+        });
+    } catch (error) {
+        console.error('Error accessing webcam:', error);
+    }
+}
+
+// Function to stop the webcam
+function stopWebcam() {
+    if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        stream = null;
+    }
+}
+
+// Function to capture an image from the webcam feed
+function captureImage() {
+    const videoElement = document.getElementById('video-element');
+    const canvas = document.createElement('canvas');
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    canvas.getContext('2d').drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    const imageDataURL = canvas.toDataURL('image/png');
+    console.log('Captured image:', imageDataURL);
+}
+
+// Add event listener to start the webcam on button click
+captureButton.addEventListener('click', () => {
+    startWebcam();
+});
+
+// Trigger the startWebcam function when the card is flipped to the back side
+document.querySelector('.card').addEventListener('click', (event) => {
+    const card = event.currentTarget;
+    if (card.classList.contains('flipped')) {
+        startWebcam();
+    } else {
+        stopWebcam(); // Stop the webcam when flipping back to the form
+    }
+});
+
+
+    </script>
+    <script>
+        // Get the capture-button element
+const captureButton = document.getElementById('capture-button');
+
+// Prevent form submission when Capture button is clicked
+captureButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    event.stopPropagation(); // Stop event propagation to parent elements
+    captureImage(); // Call the captureImage function
+});
+
     </script>
 
 </body>

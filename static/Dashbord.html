@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grocery Dashboard</title>
+  <title>Dashboard</title>
   <style>
     body {
       font-family: sans-serif;
@@ -35,7 +35,7 @@
   <div class="container">
     <div id="userGreeting">
       <img src="images/Unknown.jpg" alt="User Image"> <!-- Replace the image URL with your actual image -->
-      <h1>Hi, {user name}</h1>
+      <h1>Hi, Sowmya!</h1>
     </div>
     <p>Here is your personalized profile.</p>
     <div class="chart">
@@ -50,7 +50,7 @@
     </div>
     <div class="input-container">
       <label for="ratingInput">Enter Rating:</label>
-      <input type="number" id="ratingInput" min="1" max="10">
+      <input type="number" id="ratingInput" min="-5" max="5">
       <button onclick="addRating()">Add Rating</button>
     </div>
   </div>
@@ -80,7 +80,6 @@
       }]
     };
 
-    // Sample data for weekly pie chart
     const weeklyPieData = {
       labels: ['Low', 'Medium', 'High'],
       datasets: [{
@@ -129,7 +128,7 @@
     function addRating() {
       const ratingInput = document.getElementById('ratingInput');
       const rating = parseInt(ratingInput.value);
-      if (isNaN(rating) || rating < 1 || rating > 10) {
+      if (isNaN(rating) || rating < -5 || rating > 5) {
         alert('Please enter a valid rating between 1 and 10.');
         return;
       }
@@ -143,9 +142,9 @@
 
     // Function to update weekly pie chart
     function updateWeeklyPieChart(rating) {
-      if (rating <= 3) {
+      if (rating <= -1) {
         weeklyPieChart.data.datasets[0].data[0]++;
-      } else if (rating <= 7) {
+      } else if (rating <= 3) {
         weeklyPieChart.data.datasets[0].data[1]++;
       } else {
         weeklyPieChart.data.datasets[0].data[2]++;
