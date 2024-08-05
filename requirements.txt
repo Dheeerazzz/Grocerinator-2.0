@@ -4,3 +4,4 @@ numpy==1.24.2
 opencv_contrib_python==4.7.0.72
 opencv_python==4.7.0.72
 Requests==2.31.0
+gunicorn
